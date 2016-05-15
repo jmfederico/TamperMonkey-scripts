@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gmail hide white space
 // @namespace    http://federicojm.com/
-// @version      0.1
+// @version      0.2
 // @description  Hide white space to the right of messages in preview pane.
 // @author       Federico JM
 // @match        https://mail.google.com/mail/*u/0/
