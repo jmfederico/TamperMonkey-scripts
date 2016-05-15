@@ -7,7 +7,6 @@
 // @match        https://www.e-bbva.com.co/*
 // @match        https://www.bbvanet.com.co/*
 // @grant        none
-// @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.3/numeral.min.js
 // @run-at       document-end
 // ==/UserScript==
@@ -17,6 +16,11 @@
 
 (function ($) {
     'use strict';
+
+    // jQuery is available on BBVAnet on main frame only. This filters other frames.
+    if (typeof $ === "undefined") {
+        return false;
+    }
 
     // Spanish for Numeral.
     var language = {
@@ -79,4 +83,4 @@
         $disponible.append(span + saldo.format('0,0.00') + '</span>');
     });
 
-})(jQuery);
+})(window.jQuery);
