@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Banco de Bogotá Twiks
+// @name         Banco de Bogotá Skip Token
 // @namespace    http://federicojm.com/
 // @version      0.1
-// @description  Multiple twiks for Banco de Bogotá.
+// @description  Skip Token security code validation.
 // @author       Federico JM
 // @match        https://www.bancodebogota.com/Banking/pb/logon/requestOTP
 // @grant        none
