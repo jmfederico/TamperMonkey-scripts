@@ -11,7 +11,7 @@
 // @run-at       document-end
 // ==/UserScript==
 
-/* configure jshint globals */
+/* - jshint settings - */
 /* globals numeral */
 
 (function ($) {

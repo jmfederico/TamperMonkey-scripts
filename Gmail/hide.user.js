@@ -8,6 +8,9 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 
+/* - jshint settings - */
+/* globals GM_addStyle */
+
 (function () {
     'use strict';
     GM_addStyle('td.Bu.y3:last-child {display: none;}');

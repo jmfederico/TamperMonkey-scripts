@@ -9,6 +9,10 @@
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.slim.js
 // ==/UserScript==
 
+/* - jshint settings - */
+/* jshint esversion: 6 */
+/* globals GM_addStyle */
+
 setTimeout(function () {
     // Deferred onload
 }, 2000);
