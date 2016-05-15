@@ -67,7 +67,7 @@
     $main.children('table:eq(-1)').detach().prependTo($main);
 
     // Add current balance to Credit Cards.
-    $('p.titulotabla:contains("Tarjetas de CrÃ©dito")').closest('table').find('tr:gt(1):lt(-2)').each(function () {
+    $('p.titulotabla:contains("Tarjetas de Crédito")').closest('table').find('tr:gt(1):lt(-2)').each(function () {
         var $tr = $(this);
         var $total = $tr.find('td:eq(2) .pesetas');
         var $disponible = $tr.find('td:last .pesetas');
