@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BBVA Twiks
 // @namespace    http://federicojm.com/
-// @version      0.2
+// @version      0.3
 // @description  Multiple twiks for BBVAnet Colombia.
 // @author       Federico JM
 // @match        https://www.e-bbva.com.co/*
