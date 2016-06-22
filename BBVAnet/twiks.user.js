@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BBVA Twiks
 // @namespace    http://federicojm.com/
-// @version      0.5
+// @version      0.6
 // @description  Multiple twiks for BBVAnet Colombia.
 // @author       Federico JM
 // @match        https://www.e-bbva.com.co/*
@@ -71,23 +71,26 @@
         "?proceso=posicion_global_pr&operacion=posicion_global_op&accion=menuPosicion",
         "?proceso=operaciones_generales_pr&operacion=inicio_op&accion=inicio",
     ];
-    if (paths.indexOf($(location).attr('search')) >= 0) {
-        // Move main table to the beginning of the page.
-        var $main = $('body>div:eq(-1)');
-        $main.children('table:eq(-1)').detach().prependTo($main);
+    for (var i = 0; i<paths.length; i++) {
+        var regex = new RegExp("^\\" + paths[i] + ".*");
+        if ($(location).attr('search').match(regex) !== null) {
+            // Move main table to the beginning of the page.
+            var $main = $('body>div:eq(-1)');
+            $main.children('table:eq(-1)').detach().prependTo($main);
 
-        // Add current balance to Credit Cards.
-        $('p.titulotabla:contains("Tarjetas de Crédito")').closest('table').find('tr:gt(1):lt(-2)').each(function () {
-            var $tr = $(this);
-            var $total = $tr.find('td:eq(2) .pesetas');
-            var $disponible = $tr.find('td:last .pesetas');
+            // Add current balance to Credit Cards.
+            $('p.titulotabla:contains("Tarjetas de Crédito")').closest('table').find('tr:gt(1):lt(-2)').each(function () {
+                var $tr = $(this);
+                var $total = $tr.find('td:eq(2) .pesetas');
+                var $disponible = $tr.find('td:last .pesetas');
 
-            numeral.language('es');
-            var saldo = numeral($total.html()).subtract(numeral($disponible.html()));
+                numeral.language('es');
+                var saldo = numeral($total.html()).subtract(numeral($disponible.html()));
 
-            var span = '<span style="display:inline-block; width:80px; color:DarkRed;">';
-            $disponible.append(span + saldo.format('0,0.00') + '</span>');
-        });
+                var span = '<span style="display:inline-block; width:80px; color:DarkRed;">';
+                $disponible.append(span + saldo.format('0,0.00') + '</span>');
+            });
+        }
     }
 
 })(window.jQuery);
