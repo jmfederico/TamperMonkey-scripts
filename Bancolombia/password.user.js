@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bancolombia password
 // @namespace    http://federicojm.com/
-// @version      0.3
+// @version      0.4
 // @description  Submit password filled by password manager.
 // @author       Federico JM
 // @match        https://sucursalpersonas.transaccionesbancolombia.com/mua/VALIDATEPASSWORD
@@ -23,6 +23,9 @@
     }
 
     $('#password').attr('readonly', false);
+    $('body').on('focus mouseenter', '#password[readonly]', function() {
+        $(this).attr('readonly', false);
+    });
 
     // Password manager fills password field.
     // Bancolombia uses an onscreen keyboard that fails with password managers.
