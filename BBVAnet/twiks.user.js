@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         BBVA Twiks
 // @namespace    http://federicojm.com/
-// @version      0.9
+// @version      0.10
 // @description  Multiple twiks for BBVAnet Colombia.
 // @author       Federico JM
-// @match        https://www.e-bbva.com.co/*
 // @match        https://www.bbvanet.com.co/bbvavip/colombiavip/OperacionCBTFServlet*
 // @match        https://www.bbvanet.com.co/bbva/colombianet/OperacionCBTFServlet*
+// @match        https://www.e-bbva.com.co/bbvaecm/colombiavip/OperacionCBTFServlet*
 // @grant        none
 // @require      https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.3/numeral.min.js
 // @run-at       document-end
@@ -55,11 +55,12 @@
   $('.pesetas:not(:has(*)), .pesetas-i:not(:has(*)), .pesetas1:not(:has(*)), .dato:not(:has(*))').each(function () {
     var $this = $(this)
 
-    if ($this.html().match(/^[^0-9]*[0-9]{1,3}(,[0-9]{3})*(\.[0-9]{2})?$/) !== null) {
+    var matches = $this.html().match(/^([^0-9]*)([0-9]{1,3}(,[0-9]{3})*(\.[0-9]{2}))$/)
+    if (matches !== null) {
       numeral.language('en')
-      var valor = numeral($this.html())
+      var valor = numeral(matches[2])
       numeral.language('es')
-      $this.html(valor.format())
+      $this.html(matches[1] + valor.format())
     }
   })
 
