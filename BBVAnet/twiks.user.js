@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BBVA Twiks
 // @namespace    http://federicojm.com/
-// @version      0.10
+// @version      0.11
 // @description  Multiple twiks for BBVAnet Colombia.
 // @author       Federico JM
 // @match        https://www.bbvanet.com.co/bbvavip/colombiavip/OperacionCBTFServlet*
@@ -76,11 +76,13 @@
     var regex = new RegExp('^\\' + paths[i] + '.*')
     if ($(window.location).attr('search').match(regex) !== null) {
       // Move main table to the beginning of the page.
-      var $main = $('body>div:eq(-1)')
-      $main.children('table:eq(-1)').detach().prependTo($main)
+      var $tableTc = $('p.titulotabla:contains("Tarjetas de Crédito")').closest('table')
+      var $tableParent = $tableTc.parents('table').first()
+      var $parent = $tableParent.parent()
+      $tableParent.detach().prependTo($parent)
 
       // Add current balance to Credit Cards.
-      $('p.titulotabla:contains("Tarjetas de Crédito")').closest('table').find('tr:gt(1):lt(-2)').each(function () {
+      $tableTc.find('tr:gt(1):lt(-2)').each(function () {
         var $tr = $(this)
         var $total = $tr.find('td:eq(2) .pesetas')
         var $disponible = $tr.find('td:last .pesetas')
