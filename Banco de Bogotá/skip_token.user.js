@@ -10,14 +10,13 @@
 // ==/UserScript==
 
 (function ($) {
-    'use strict';
+  'use strict'
 
-    // jQuery is loaded by Banco de Bogotá.
-    if (typeof $ === "undefined") {
-        return false;
-    }
+  // jQuery is loaded by Banco de Bogotá.
+  if (typeof $ === 'undefined') {
+    return false
+  }
 
-    // Skip token securty code validation.
-    $('input[name="submit_activeOTP"]').click();
-
-})(window.jQuery);
+  // Skip token securty code validation.
+  $('input[name="submit_activeOTP"]').click()
+})(window.jQuery)
