@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BBVA Twiks
 // @namespace    http://federicojm.com/
-// @version      0.11
+// @version      0.12
 // @description  Multiple twiks for BBVAnet Colombia.
 // @author       Federico JM
 // @match        https://www.bbvanet.com.co/bbvavip/colombiavip/OperacionCBTFServlet*
@@ -67,6 +67,27 @@
   // Set langauge for Numeral library.
   numeral.language('es')
 
+  var agregaSaldo = function () {
+    // Move main table to the beginning of the page.
+    var $tableTc = $('p.titulotabla:contains("Tarjetas de Crédito")').closest('table')
+    var $tableParent = $tableTc.parents('table').first()
+    var $parent = $tableParent.parent()
+    $tableParent.detach().prependTo($parent)
+
+    // Add current balance to Credit Cards.
+    $tableTc.find('tr:gt(1):lt(-2)').each(function () {
+      var $tr = $(this)
+      var $total = $tr.find('td:eq(2) .pesetas')
+      var $disponible = $tr.find('td:last .pesetas')
+
+      numeral.language('es')
+      var saldo = numeral($total.html()).subtract(numeral($disponible.html()))
+
+      var span = '<span style="display:inline-block; width:80px; color:DarkRed;">'
+      $disponible.append(span + saldo.format('0,0.00') + '</span>')
+    })
+  }
+
   // Only on the main page.
   var paths = [
     '?proceso=posicion_global_pr&operacion=posicion_global_op&accion=menuPosicion',
@@ -75,24 +96,7 @@
   for (var i = 0; i < paths.length; i++) {
     var regex = new RegExp('^\\' + paths[i] + '.*')
     if ($(window.location).attr('search').match(regex) !== null) {
-      // Move main table to the beginning of the page.
-      var $tableTc = $('p.titulotabla:contains("Tarjetas de Crédito")').closest('table')
-      var $tableParent = $tableTc.parents('table').first()
-      var $parent = $tableParent.parent()
-      $tableParent.detach().prependTo($parent)
-
-      // Add current balance to Credit Cards.
-      $tableTc.find('tr:gt(1):lt(-2)').each(function () {
-        var $tr = $(this)
-        var $total = $tr.find('td:eq(2) .pesetas')
-        var $disponible = $tr.find('td:last .pesetas')
-
-        numeral.language('es')
-        var saldo = numeral($total.html()).subtract(numeral($disponible.html()))
-
-        var span = '<span style="display:inline-block; width:80px; color:DarkRed;">'
-        $disponible.append(span + saldo.format('0,0.00') + '</span>')
-      })
+      agregaSaldo()
     }
   }
 })(window.jQuery)
