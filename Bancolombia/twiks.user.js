@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bancolombia Twiks
 // @namespace    http://federicojm.com/
-// @version      0.2
+// @version      0.3
 // @description  Multiple twiks for Bancolombia.
 // @author       Federico JM
 // @match        https://sucursalpersonas.transaccionesbancolombia.com/cb/pages/jsp/home/index.jsp
@@ -51,11 +51,12 @@
   numeral.defaultFormat('0,0.00')
 
   $(document).ajaxComplete(function () {
-    var $items = $('#detail_group_container_home .Cell span')
-      .add('.gral-form-container .row > div')
-      .add('[aria-describedby="gridGroupProductID_home_extData.COP"] > span')
-      .add('[aria-describedby="gridProductID_creditCards_extData.minVals"] > span')
-      .add('[aria-describedby="gridProductID_creditCardDetails_amount"] > span')
+    var $items = $('#gridProductID_home td:nth-child(3) > span') // Home
+      .add('#history-container .Row > .Cell_home:nth-child(3) > span') // Home
+      .add('.detail-box > div > div:nth-child(2)') // Product detail
+      .add('.gral-form-container .row > div') // Product detail
+      .add('[aria-describedby="gridProductID_creditCardDetails_amount"] > span') // Product detail
+
     $items.contents().filter(function () {
       if (this.nodeType === window.Node.TEXT_NODE) {
         var matches = this.nodeValue.match(/^([^0-9,]*)([0-9]{1,3}(,[0-9]{3})*(\.[0-9]{2}))$/)
