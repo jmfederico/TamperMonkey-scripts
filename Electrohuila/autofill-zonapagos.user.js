@@ -12,13 +12,22 @@
 (function () {
   'use strict'
 
-  var terms = document.getElementsByName('ChkTerminos')
-  if (terms.length === 1) {
-    terms[0].checked = true
-  }
+  var data = JSON.parse(localStorage.getItem('userscript-autofill'))
 
-  var banco = document.getElementsByName('lst_bancos_pse')
-  if (banco.length === 1) {
-    banco[0].value = 1013
+  if (data && data.banco) {
+    var terms = document.getElementsByName('ChkTerminos')
+    if (terms.length === 1) {
+      terms[0].checked = true
+    }
+
+    var banco = document.getElementsByName('lst_bancos_pse')
+    if (banco.length === 1) {
+      banco[0].value = data.banco
+    }
+  } else {
+    window.console.log('--- Userscript autofill ---\n\n' +
+                        'Create a local data storage with autofill values.\n' +
+                        'localStorage.setItem("userscript-autofill", JSON.stringify({"banco":"BANCO"}))\n\n' +
+                        '--- Userscript autofill ---')
   }
 })()

@@ -12,7 +12,7 @@
 (function () {
   'use strict'
 
-  var data = JSON.parse(localStorage.getItem('tampermonkey-autofill'))
+  var data = JSON.parse(localStorage.getItem('userscript-autofill'))
 
   if (data && data.email && data.mobile) {
     var email = document.getElementById('dnn_ctr695_ViewGWZonaPagos_txtEmail')
@@ -24,9 +24,9 @@
       mobile.value = data.mobile
     }
   } else {
-    window.console.log('--- Tampermonkey autofill ---\n\n' +
+    window.console.log('--- Userscript autofill ---\n\n' +
                        'Create a local data storage with autofill values.\n' +
-                       'localStorage.setItem("tampermonkey-autofill", JSON.stringify({"email":"EMAIL","mobile":"MOBILE"}))\n\n' +
-                       '--- Tampermonkey autofill ---')
+                       'localStorage.setItem("userscript-autofill", JSON.stringify({"email":"EMAIL","mobile":"MOBILE"}))\n\n' +
+                       '--- Userscript autofill ---')
   }
 })()
