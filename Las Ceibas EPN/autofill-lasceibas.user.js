@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Alcanos - Autofill bill info
+// @name         Las Ceibas EPN - Autofill bill info
 // @namespace    http://federicojm.com/
 // @version      0.1
 // @description  Autofill info for Las Ceibas EPN payments
