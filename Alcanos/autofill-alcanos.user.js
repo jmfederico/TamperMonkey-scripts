@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Alcanos - Autofill bill info
 // @namespace    http://federicojm.com/
-// @version      0.1
+// @version      0.2
 // @description  Autofill info for Alcanos payments
 // @author       Federico JM
 // @match        https://gateway.pagosonline.net/apps/facturacion/36715/index.html*
@@ -19,7 +19,7 @@
 
     var data = JSON.parse(localStorage.getItem('userscript-autofill'))
 
-    if (data && data.banco && data.nombre && data.tipo && data.documento && data.telefono && data.email) {
+    if (data && data.usuario && data.banco && data.nombre && data.tipo && data.documento && data.telefono && data.email) {
       var usuario = document.querySelector('input[id$="q1"]')
       if (usuario) {
         usuario.value = data.usuario
