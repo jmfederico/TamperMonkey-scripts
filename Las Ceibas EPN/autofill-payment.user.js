@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Las Ceibas EPN - Autofill bill info
 // @namespace    http://federicojm.com/
-// @version      0.1
+// @version      0.2
 // @description  Autofill info for Las Ceibas EPN payments
 // @author       Federico JM
 // @match        https://www.psepagos.co/PSEHostingUI/GetBankListBD.aspx*
@@ -10,8 +10,6 @@
 // ==/UserScript==
 
 (function () {
-  'use strict'
-
   var data = JSON.parse(localStorage.getItem('userscript-autofill'))
 
   if (data && data.banco && data.tipo) {
@@ -29,7 +27,7 @@
   } else {
     window.console.log('--- Userscript autofill ---\n\n' +
                         'Create a local data storage with autofill values.\n' +
-                        'localStorage.setItem("userscript-autofill", JSON.stringify({"banco":"BANCO","tipo":"TIPO DE CLIENTE"}))\n\n' +
+                        'localStorage.setItem("userscript-autofill", JSON.stringify({"banco": "BANCO", "tipo": "TIPO DE CLIENTE"}))\n\n' +
                         '--- Userscript autofill ---')
   }
 })()
