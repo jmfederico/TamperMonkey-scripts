@@ -9,12 +9,12 @@
 // @run-at       document-end
 // ==/UserScript==
 
-(function ($) {
-    // jQuery is available on BBVA net cash.
-    if (typeof $ === 'undefined') {
-      return false;
-    }
+;(function ($) {
+  // jQuery is available on BBVA net cash.
+  if (typeof $ === 'undefined') {
+    return false
+  }
 
-    // Allow scroll on long tables.
-    $('#divtabla').css('overflow', 'initial');
-})(window.jQuery);
+  // Allow scroll on long tables.
+  $('#divtabla').css('overflow', 'initial')
+})(window.jQuery)
