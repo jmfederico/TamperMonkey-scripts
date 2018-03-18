@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         Mi Claro - Twiks
+// @name         Mi Claro - Tweaks
 // @namespace    http://federicojm.com/
-// @version      0.1
+// @version      0.2
 // @description  Remove annoying chat popup that ALWAYS shows up.
 // @author       Federico JM
 // @match        http://miclaro.claro.com.co/wps/myportal/co/mtmx/mi-telmex*
 // @grant        none
 // ==/UserScript==
 
-(function () {
+;(function () {
   'use strict'
 
   var deleteChat = function () {
