@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Bancolombia Twiks
+// @name         Bancolombia Tweaks
 // @namespace    http://federicojm.com/
-// @version      0.3
-// @description  Multiple twiks for Bancolombia.
+// @version      0.4
+// @description  Multiple tweaks for Bancolombia.
 // @author       Federico JM
 // @match        https://sucursalpersonas.transaccionesbancolombia.com/cb/pages/jsp/home/index.jsp
 // @grant        none
@@ -13,9 +13,7 @@
 /* global numeral */
 
 ;(function ($) {
-  'use strict'
-
-  // jQuery is available on BBVAnet on main frame only. This filters other frames.
+  // jQuery is loaded by Bancolombia.
   if (typeof $ === 'undefined') {
     return false
   }
@@ -46,7 +44,7 @@
   }
   numeral.language('es', language)
 
-  // Set langauge for Numeral library.
+  // Set language for Numeral library.
   numeral.language('es')
   numeral.defaultFormat('0,0.00')
 
@@ -74,6 +72,6 @@
     })
   })
 
-  // Set langauge for Numeral library.
+  // Set language for Numeral library.
   numeral.language('es')
 })(window.jQuery)
