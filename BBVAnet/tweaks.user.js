@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BBVA Tweaks
 // @namespace    http://federicojm.com/
-// @version      0.2
+// @version      0.3
 // @description  Multiple tweaks for BBVA net Colombia.
 // @author       Federico JM
 // @match        https://nuevaversion.bbvanet.com.co/*
