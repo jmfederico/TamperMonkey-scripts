@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         BBVA Net Cash Twiks
+// @name         BBVA Net Cash Tweaks
 // @namespace    http://federicojm.com/
-// @version      0.1
-// @description  Multiple twiks for BBVAnet Cash Colombia.
+// @version      0.2
+// @description  Multiple tweaks for BBVA net Cash Colombia.
 // @author       Federico JM
 // @match        https://www.bbvanetcash.com.co/SCOTLCL/cashglobal/servlet/*
 // @grant        none
@@ -10,14 +10,11 @@
 // ==/UserScript==
 
 (function ($) {
-    'use strict';
-
-    // jQuery is available on BBVAnet cash.
-    if (typeof $ === "undefined") {
-        return false;
+    // jQuery is available on BBVA net cash.
+    if (typeof $ === 'undefined') {
+      return false;
     }
 
     // Allow scroll on long tables.
     $('#divtabla').css('overflow', 'initial');
-
 })(window.jQuery);
