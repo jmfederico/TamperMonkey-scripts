@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Alcanos - Autofill bill info
+// @name         Alcanos - Auto fill bill info
 // @namespace    http://federicojm.com/
-// @version      0.2
-// @description  Autofill info for Alcanos payments
+// @version      0.3
+// @description  Auto fill info for Alcanos payments
 // @author       Federico JM
 // @match        https://gateway.pagosonline.net/apps/facturacion/36715/index.html*
 // @grant        none
