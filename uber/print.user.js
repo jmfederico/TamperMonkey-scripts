@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Better Uber print
 // @namespace    http://federicojm.com/
-// @version      0.1
+// @version      0.2
 // @description  Hide unimportant information from printing.
 // @author       Federico JM
 // @match        https://riders.uber.com/trips/*

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Gmail Print
 // @namespace    http://federicojm.com/
-// @version      0.3
+// @version      0.4
 // @description  Better email printing for Gmail.
 // @author       Federico JM
 // @match        https://mail.google.com/mail/*?*view=pt*

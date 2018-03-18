@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BBVA Tweaks
 // @namespace    http://federicojm.com/
-// @version      0.3
+// @version      0.4
 // @description  Multiple tweaks for BBVA net Colombia.
 // @author       Federico JM
 // @match        https://nuevaversion.bbvanet.com.co/*
@@ -13,8 +13,6 @@
 /* global numeral */
 
 ;(function ($) {
-  'use strict'
-
   // jQuery is available on BBVA net.
   if (typeof $ === 'undefined') {
     return false
