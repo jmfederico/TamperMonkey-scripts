@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Eletrohuila - Autofill bill info
+// @name         Electrohuila - Autofill bill info
 // @namespace    http://federicojm.com/
-// @version      0.2
+// @version      0.3
 // @description  Autofill info for Electrohuila payments
 // @author       Federico JM
 // @match        http://www.electrohuila.com.co/Pago_Electronico/PagosEnLinea.aspx*

@@ -70,7 +70,7 @@
     } else {
       window.console.log('--- Userscript autofill ---\n\n' +
                          'Create a local data storage with autofill values.\n' +
-                         'localStorage.setItem("userscript-autofill", JSON.stringify({"usuario":"USUARIO", "banco":"BANCO","nombre":"NOMBRE","tipo":"TIPO DE DOCUMENTO","documento":"00000000","telefono":"5551234","email":"EMAIL@DOMINIO.COM"}))\n\n' +
+                         'localStorage.setItem("userscript-autofill", JSON.stringify({"usuario":"USUARIO", "banco":"BANCO", "nombre":"NOMBRE", "tipo":"TIPO DE DOCUMENTO", "documento":"00000000", "telefono":"5551234", "email":"EMAIL@DOMINIO.COM"}))\n\n' +
                          '--- Userscript autofill ---')
     }
   }
