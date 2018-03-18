@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         BBVA Twiks (Beta)
+// @name         BBVA Tweaks
 // @namespace    http://federicojm.com/
-// @version      0.1
-// @description  Multiple twiks for BBVAnet Colombia.
+// @version      0.2
+// @description  Multiple tweaks for BBVA net Colombia.
 // @author       Federico JM
 // @match        https://nuevaversion.bbvanet.com.co/*
 // @grant        none
@@ -15,7 +15,7 @@
 ;(function ($) {
   'use strict'
 
-  // jQuery is available on BBVAnet.
+  // jQuery is available on BBVA net.
   if (typeof $ === 'undefined') {
     return false
   }
