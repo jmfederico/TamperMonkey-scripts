@@ -9,8 +9,6 @@
 // ==/UserScript==
 
 ;(function () {
-  'use strict'
-
   var deleteChat = function () {
     var chat = document.getElementById('inbenta')
     if (chat) {

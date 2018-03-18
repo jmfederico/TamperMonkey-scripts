@@ -17,7 +17,6 @@ setTimeout(function () {
 }, 2000)
 
 ;(function ($) {
-  'use strict'
   var $mc = $('.maincontent')
   var $el
 

@@ -11,7 +11,7 @@
 
 /* globals GM_addStyle */
 
-(function () {
+;(function () {
   GM_addStyle(`
     @media print {
       .page-header,
@@ -19,7 +19,7 @@
       .page-sidebar,
       .trip-details__review,
       #trip-details__actions {
-        display: none;
+        display: none
       }
     }
   `)
