@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bancolombia Empresas - No keyboard hijacking
 // @namespace    http://federicojm.com/
-// @version      0.1
+// @version      0.2
 // @description  Disable Keyboard hijacking on Bancolombia Empresas login page.
 // @author       Federico JM
 // @match        https://olbe.todo1.com/SVE/control/*
@@ -9,10 +9,10 @@
 // @run-at       document-end
 // ==/UserScript==
 
-removeOnEvents = function(selector) {
+var removeOnEvents = function (selector) {
   var element = document.querySelector(selector)
 
-  for (i = 0; i < element.attributes.length; i++) {
+  for (var i = 0; i < element.attributes.length; i++) {
     if (element.attributes[i].name.startsWith('on')) {
       element.attributes[i].value = null
     }

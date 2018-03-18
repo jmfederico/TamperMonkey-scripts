@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bancolombia password
 // @namespace    http://federicojm.com/
-// @version      0.5
+// @version      0.6
 // @description  Submit password filled by password manager.
 // @author       Federico JM
 // @match        https://sucursalpersonas.transaccionesbancolombia.com/mua/VALIDATEPASSWORD*
@@ -14,8 +14,6 @@
 /* globals collect, clearKeys, inspect, enviar */
 
 ;(function ($) {
-  'use strict'
-
   // jQuery is loaded by Bancolombia.
   if (typeof $ === 'undefined') {
     return false
