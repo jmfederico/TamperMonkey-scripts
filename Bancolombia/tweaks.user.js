@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Bancolombia Tweaks
+// @name         Bancolombia Personas - Tweaks
 // @namespace    http://federicojm.com/
-// @version      0.4
+// @version      1.0
 // @description  Multiple tweaks for Bancolombia.
 // @author       Federico JM
 // @match        https://sucursalpersonas.transaccionesbancolombia.com/cb/pages/jsp/home/index.jsp

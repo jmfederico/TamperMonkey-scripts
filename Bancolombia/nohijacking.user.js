@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bancolombia Personas - No hijacking
 // @namespace    http://federicojm.com/
-// @version      0.3
+// @version      1.0
 // @description  Disable Keyboard and Mouse hijacking on Bancolombia Personas.
 // @author       Federico JM
 // @match        https://sucursalpersonas.transaccionesbancolombia.com/*
