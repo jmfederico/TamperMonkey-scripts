@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         El Espectador - Sticky header
 // @namespace    http://federicojm.com/
-// @version      0.1
+// @version      1.0
 // @description  Fix sticky header jump.
 // @author       Federico JM
 // @match        https://www.elespectador.com/*
@@ -34,5 +34,5 @@ const observer = new MutationObserver((mutationsList, _observer) => {
 observer.observe(header, {
   attributes: true,
   attributeFilter: ["class"],
-  attributeOldValue: true,
+  attributeOldValue: true
 });

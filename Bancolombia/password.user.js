@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Bancolombia Personas - Password
 // @namespace    http://federicojm.com/
-// @version      1.0
+// @version      1.1
 // @description  Submit password filled by password manager.
 // @author       Federico JM
 // @match        https://sucursalpersonas.transaccionesbancolombia.com/mua/VALIDATEPASSWORD*
@@ -13,40 +13,45 @@
 /* - jshint settings - */
 /* globals collect, clearKeys, inspect, enviar */
 
-;(function ($) {
+(function($) {
   // jQuery is loaded by Bancolombia.
-  if (typeof $ === 'undefined') {
-    return false
+  if (typeof $ === "undefined") {
+    return false;
   }
 
-  $('#password').attr('readonly', false)
-  $('body').on('focus mouseenter', '#password[readonly]', function () {
-    $(this).attr('readonly', false)
-  })
+  $("#password").attr("readonly", false);
+  $("body").on("focus mouseenter", "#password[readonly]", function() {
+    $(this).attr("readonly", false);
+  });
 
   // Password manager fills password field.
   // Bancolombia uses an onscreen keyboard that fails with password managers.
   // Simulate clicking each number and submit.
-  $(document).on('change', '#password', function () {
-    var password = $(this).val()
+  $(document).on("change", "#password", function() {
+    var password = $(this).val();
 
     // Bancolombia sets a timeout for collect().
     // Run it if necessary.
     // Only available on first password.
-    if (window.collect !== undefined && typeof window.dom_data_collection === 'undefined') {
-      collect()
+    if (
+      window.collect !== undefined &&
+      typeof window.dom_data_collection === "undefined"
+    ) {
+      collect();
     }
 
     if (password.length === 4) {
-      clearKeys()
+      clearKeys();
       for (var i = 0, len = password.length; i < len; i++) {
-        $('#keyboard_ div:contains("' + password[i] + '")').parent().click()
+        $('#keyboard_ div:contains("' + password[i] + '")')
+          .parent()
+          .click();
       }
       // Only available on first password.
       if (window.inspect !== undefined) {
-        inspect()
+        inspect();
       }
-      enviar()
+      enviar();
     }
-  })
-})(window.jQuery)
+  });
+})(window.jQuery);
